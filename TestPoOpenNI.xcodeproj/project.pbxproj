@@ -1,0 +1,229 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF8B200E161F89D6001BB13F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EF8B200D161F89D6001BB13F /* AppDelegate.mm */; };
+		EF8B2010161F89D6001BB13F /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF8B200F161F89D6001BB13F /* en.strings */; };
+		EF8B2012161F89D6001BB13F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8B2011161F89D6001BB13F /* main.m */; };
+		EF8B2014161F89D6001BB13F /* main.pch in Resources */ = {isa = PBXBuildFile; fileRef = EF8B2013161F89D6001BB13F /* main.pch */; };
+		EF8B2017161F89D6001BB13F /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF8B2016161F89D6001BB13F /* main.xib */; };
+		EF8B201A161F89D6001BB13F /* poOpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EF8B2019161F89D6001BB13F /* poOpenGLView.mm */; };
+		EF8B201E161F89D6001BB13F /* TestPoOpenNIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B201D161F89D6001BB13F /* TestPoOpenNIApp.cpp */; };
+		EF8B2020161F89D6001BB13F /* AppConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B201F161F89D6001BB13F /* AppConfig.cpp */; };
+		EF8B2022161F89D6001BB13F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8B2021161F89D6001BB13F /* OpenSans-Regular.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EF8B2005161F89D6001BB13F /* TestPoOpenNI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestPoOpenNI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF8B200A161F89D6001BB13F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../platform/Debug.xcconfig; sourceTree = "<group>"; };
+		EF8B200B161F89D6001BB13F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../platform/Release.xcconfig; sourceTree = "<group>"; };
+		EF8B200C161F89D6001BB13F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../platform/AppDelegate.h; sourceTree = "<group>"; };
+		EF8B200D161F89D6001BB13F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = ../platform/AppDelegate.mm; sourceTree = "<group>"; };
+		EF8B200F161F89D6001BB13F /* en.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en.strings; path = ../platform/en.strings; sourceTree = "<group>"; };
+		EF8B2011161F89D6001BB13F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../platform/main.m; sourceTree = "<group>"; };
+		EF8B2013161F89D6001BB13F /* main.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = main.pch; path = ../platform/main.pch; sourceTree = "<group>"; };
+		EF8B2015161F89D6001BB13F /* main.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = main.plist; path = ../platform/main.plist; sourceTree = "<group>"; };
+		EF8B2016161F89D6001BB13F /* main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = main.xib; path = ../platform/main.xib; sourceTree = "<group>"; };
+		EF8B2018161F89D6001BB13F /* poOpenGLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = poOpenGLView.h; path = ../platform/poOpenGLView.h; sourceTree = "<group>"; };
+		EF8B2019161F89D6001BB13F /* poOpenGLView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = poOpenGLView.mm; path = ../platform/poOpenGLView.mm; sourceTree = "<group>"; };
+		EF8B201C161F89D6001BB13F /* TestPoOpenNIApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestPoOpenNIApp.h; sourceTree = "<group>"; };
+		EF8B201D161F89D6001BB13F /* TestPoOpenNIApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestPoOpenNIApp.cpp; sourceTree = "<group>"; };
+		EF8B201F161F89D6001BB13F /* AppConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AppConfig.cpp; sourceTree = "<group>"; };
+		EF8B2021161F89D6001BB13F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../platform/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF8B2002161F89D6001BB13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF8B1FFA161F89D6001BB13F = {
+			isa = PBXGroup;
+			children = (
+				EF8B2008161F89D6001BB13F /* TestPoOpenNI */,
+				EF8B2006161F89D6001BB13F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF8B2006161F89D6001BB13F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF8B2005161F89D6001BB13F /* TestPoOpenNI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF8B2008161F89D6001BB13F /* TestPoOpenNI */ = {
+			isa = PBXGroup;
+			children = (
+				EF8B2009161F89D6001BB13F /* platform */,
+				EF8B201B161F89D6001BB13F /* application */,
+			);
+			path = TestPoOpenNI;
+			sourceTree = "<group>";
+		};
+		EF8B2009161F89D6001BB13F /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				EF8B200A161F89D6001BB13F /* Debug.xcconfig */,
+				EF8B200B161F89D6001BB13F /* Release.xcconfig */,
+				EF8B200C161F89D6001BB13F /* AppDelegate.h */,
+				EF8B200D161F89D6001BB13F /* AppDelegate.mm */,
+				EF8B200F161F89D6001BB13F /* en.strings */,
+				EF8B2011161F89D6001BB13F /* main.m */,
+				EF8B2013161F89D6001BB13F /* main.pch */,
+				EF8B2015161F89D6001BB13F /* main.plist */,
+				EF8B2016161F89D6001BB13F /* main.xib */,
+				EF8B2018161F89D6001BB13F /* poOpenGLView.h */,
+				EF8B2019161F89D6001BB13F /* poOpenGLView.mm */,
+				EF8B2021161F89D6001BB13F /* OpenSans-Regular.ttf */,
+			);
+			name = platform;
+			sourceTree = "<group>";
+		};
+		EF8B201B161F89D6001BB13F /* application */ = {
+			isa = PBXGroup;
+			children = (
+				EF8B201C161F89D6001BB13F /* TestPoOpenNIApp.h */,
+				EF8B201D161F89D6001BB13F /* TestPoOpenNIApp.cpp */,
+				EF8B201F161F89D6001BB13F /* AppConfig.cpp */,
+			);
+			name = application;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF8B2004161F89D6001BB13F /* TestPoOpenNI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF8B2025161F89D6001BB13F /* Build configuration list for PBXNativeTarget "TestPoOpenNI" */;
+			buildPhases = (
+				EF8B2001161F89D6001BB13F /* Sources */,
+				EF8B2002161F89D6001BB13F /* Frameworks */,
+				EF8B2003161F89D6001BB13F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestPoOpenNI;
+			productName = TestPoOpenNI;
+			productReference = EF8B2005161F89D6001BB13F /* TestPoOpenNI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF8B1FFC161F89D6001BB13F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = EF8B1FFF161F89D6001BB13F /* Build configuration list for PBXProject "TestPoOpenNI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EF8B1FFA161F89D6001BB13F;
+			productRefGroup = EF8B2006161F89D6001BB13F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF8B2004161F89D6001BB13F /* TestPoOpenNI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF8B2003161F89D6001BB13F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8B2010161F89D6001BB13F /* en.strings in Resources */,
+				EF8B2014161F89D6001BB13F /* main.pch in Resources */,
+				EF8B2017161F89D6001BB13F /* main.xib in Resources */,
+				EF8B2022161F89D6001BB13F /* OpenSans-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF8B2001161F89D6001BB13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF8B200E161F89D6001BB13F /* AppDelegate.mm in Sources */,
+				EF8B2012161F89D6001BB13F /* main.m in Sources */,
+				EF8B201A161F89D6001BB13F /* poOpenGLView.mm in Sources */,
+				EF8B201E161F89D6001BB13F /* TestPoOpenNIApp.cpp in Sources */,
+				EF8B2020161F89D6001BB13F /* AppConfig.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EF8B2023161F89D6001BB13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8B200A161F89D6001BB13F /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		EF8B2024161F89D6001BB13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8B200B161F89D6001BB13F /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		EF8B2026161F89D6001BB13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		EF8B2027161F89D6001BB13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF8B1FFF161F89D6001BB13F /* Build configuration list for PBXProject "TestPoOpenNI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8B2023161F89D6001BB13F /* Debug */,
+				EF8B2024161F89D6001BB13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF8B2025161F89D6001BB13F /* Build configuration list for PBXNativeTarget "TestPoOpenNI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF8B2026161F89D6001BB13F /* Debug */,
+				EF8B2027161F89D6001BB13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF8B1FFC161F89D6001BB13F /* Project object */;
+}
