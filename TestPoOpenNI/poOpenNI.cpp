@@ -13,8 +13,6 @@ max_devices(_max_devices)
 {
     for(int i=0; i<max_devices; ++i){
         textures.push_back(new poTexture(KINECT_WIDTH, KINECT_HEIGHT, NULL, GL_RGB));
-        ubyte a[KINECT_WIDTH*KINECT_HEIGHT*3];
-        rgb.push_back(a);
     }
     
     flip_view = _flip_view;

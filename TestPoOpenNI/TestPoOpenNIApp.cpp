@@ -26,19 +26,18 @@ TestPoOpenNIApp::TestPoOpenNIApp() {
         rects[1]->position.x += rects[0]->getWidth();
     
     
-    openni = new poOpenNI(rects.size());
+    openni = new poOpenNI(rects.size(), flip_view);
     
     addChild(openni);
 }
 
 // APP DESTRUCTOR. Delete all objects here.
 TestPoOpenNIApp::~TestPoOpenNIApp() {
-	openni->updateRGBImage(rects);
 }
 
 // UPDATE. Called once per frame. Animate objects here.
 void TestPoOpenNIApp::update() {
-	
+	openni->updateRGBImage(rects);
 }
 
 // DRAW. Called once per frame. Draw objects here.

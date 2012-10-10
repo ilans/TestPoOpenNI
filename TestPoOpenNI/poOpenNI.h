@@ -84,7 +84,7 @@ private:
     boost::thread opencv_t;
     
     vector<poTexture*> textures;
-    vector<ubyte*> rgb;
+    ubyte rgb[MAX_NUM_OF_SENSORS][KINECT_WIDTH*KINECT_HEIGHT*3];
     
     uint num_of_devices;
     uint max_devices;
