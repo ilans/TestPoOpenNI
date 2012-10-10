@@ -10,6 +10,8 @@
 // APP CONSTRUCTOR. Create all objects here.
 TestPoOpenNIApp::TestPoOpenNIApp() {
 	addModifier(new poCamera2D(poColor::black));
+    
+    openni = new poOpenNI(2);
 }
 
 // APP DESTRUCTOR. Delete all objects here.

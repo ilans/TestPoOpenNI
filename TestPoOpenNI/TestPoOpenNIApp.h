@@ -3,6 +3,7 @@
  */
 
 #include "poObject.h"
+#include "poOpenNI.h"
 
 class TestPoOpenNIApp : public poObject {
 public:
@@ -16,5 +17,7 @@ public:
     virtual void eventHandler(poEvent *event);
 	
     virtual void messageHandler(const std::string &msg, const poDictionary& dict=poDictionary());
+    
+    poOpenNI* openni;
 };
 
