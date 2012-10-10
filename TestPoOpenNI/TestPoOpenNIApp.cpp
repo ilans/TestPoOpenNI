@@ -11,11 +11,29 @@
 TestPoOpenNIApp::TestPoOpenNIApp() {
 	addModifier(new poCamera2D(poColor::black));
     
-    openni = new poOpenNI(2);
+    for (int i=0; i<2; ++i) {
+        rects.push_back(new poRectShape(KINECT_WIDTH,KINECT_HEIGHT));
+        rects[i]->rotation = 180;
+        rects[i]->position.x = KINECT_WIDTH;
+        rects[i]->position.y = KINECT_HEIGHT;
+        addChild(rects[i]);
+    }
+    
+    flip_view = false;
+    if(flip_view)
+        rects[0]->position.x += rects[1]->getWidth();
+    else
+        rects[1]->position.x += rects[0]->getWidth();
+    
+    
+    openni = new poOpenNI(rects.size());
+    
+    addChild(openni);
 }
 
 // APP DESTRUCTOR. Delete all objects here.
 TestPoOpenNIApp::~TestPoOpenNIApp() {
+	openni->updateRGBImage(rects);
 }
 
 // UPDATE. Called once per frame. Animate objects here.

@@ -19,5 +19,9 @@ public:
     virtual void messageHandler(const std::string &msg, const poDictionary& dict=poDictionary());
     
     poOpenNI* openni;
+
+    vector<poRectShape*> rects;
+    
+    bool flip_view;
 };
 

@@ -24,7 +24,8 @@
 //#include "opencv2/highgui/highgui.hpp"
 
 // Defines
-#define NUM_OF_SENSORS 2
+#define MAX_NUM_OF_SENSORS 6
+
 
 #define CHECK_RC(rc, what)                                      \
 if (rc != XN_STATUS_OK)                                         \
@@ -44,8 +45,6 @@ printf("%s failed: %s\n", what, xnGetStatusString(rc));        \
 
 using namespace xn;
 using namespace std;
-
-#define NUM_OF_SENSORS 2
 
 struct xnDepthRgbSensors
 {
@@ -79,7 +78,7 @@ private:
     Context xnContext;
     XnStatus nRetVal;
     
-    xnDepthRgbSensors sensors[NUM_OF_SENSORS];
+    xnDepthRgbSensors sensors[MAX_NUM_OF_SENSORS];
     
     boost::thread openni_t;
     boost::thread opencv_t;

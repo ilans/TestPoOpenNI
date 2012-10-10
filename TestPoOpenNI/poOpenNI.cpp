@@ -105,7 +105,7 @@ void poOpenNI::initOpenNI() {
 void poOpenNI::run(){
     while (true)
     {
-        for(int i = 0 ; i < NUM_OF_SENSORS ; ++i)
+        for(int i = 0 ; i < num_of_devices ; ++i)
         {
             xnDepthRgbSensors &sensor = sensors[i];
             nRetVal = XN_STATUS_OK;
@@ -132,81 +132,3 @@ void poOpenNI::proccessImage(){
 
 void poOpenNI::proccessDepth(){
 }
-
-/*
- void poOpenNI::initOpenNI() {
- nRetVal = XN_STATUS_OK;
- nRetVal = xnContext.Init();
- NodeInfoList devicesList;
- int devicesListCount = 0;
- 
- // Getting Sensors information and configure all sensors
- nRetVal = xnContext.EnumerateProductionTrees(XN_NODE_TYPE_DEVICE, NULL, devicesList);
- for (NodeInfoList::Iterator it = devicesList.Begin(); it != devicesList.End(); ++it)
- {
- devicesListCount++;
- }
- CHECK_RC(nRetVal, "Enumerate");
- 
- int i=0;
- for (NodeInfoList::Iterator it = devicesList.Begin(); it != devicesList.End(); ++it, ++i)
- {
- if(num_of_devices <= i+1){
- xnDepthRgbSensors* sensor = new xnDepthRgbSensors();
- sensors.push_back(sensor);
- 
- // Create the device node
- NodeInfo deviceInfo = *it;
- nRetVal = xnContext.CreateProductionTree(deviceInfo, sensors[i]->device);
- CHECK_RC(nRetVal, "Create Device");
- 
- // Create a query to depend on this node
- Query query;
- query.AddNeededNode(deviceInfo.GetInstanceName());
- 
- // Copy the device name
- xnOSMemCopy(sensors[i]->name,deviceInfo.GetInstanceName(),
- xnOSStrLen(deviceInfo.GetInstanceName()));
- 
- // Now create a depth generator over this device
- nRetVal = xnContext.CreateAnyProductionTree(XN_NODE_TYPE_DEPTH, &query, sensors[i]->depth);
- CHECK_RC(nRetVal, "Create Depth");
- 
- // now create a image generator over this device
- nRetVal = xnContext.CreateAnyProductionTree(XN_NODE_TYPE_IMAGE, &query, sensors[i]->image);
- CHECK_RC(nRetVal, "Create Image");
- }
- }
- 
- if(flip_view)
- xnContext.SetGlobalMirror(true);
- 
- xnContext.StartGeneratingAll();
- CHECK_RC(nRetVal, "StartGenerating");
- 
- }
- 
- void poOpenNI::run(){
- while (true)
- {
- for(int i = 0 ; i < NUM_OF_SENSORS ; ++i)
- {
- xnDepthRgbSensors* sensor = sensors[i];
- nRetVal = XN_STATUS_OK;
- nRetVal = xnContext.WaitAnyUpdateAll();
- CHECK_RC_CONTINUE(nRetVal, "WaitAnyUpdateAll() failed");
- 
- if (sensor->depth.IsValid())
- {
- sensor->depth.GetMetaData(sensor->depthMD);
- }
- 
- if (sensor->image.IsValid())
- {
- sensor->image.GetMetaData(sensor->imageMD);
- memcpy( rgb[i], (ubyte*) sensor->imageMD.RGB24Data() , sizeof(ubyte)*KINECT_WIDTH*KINECT_HEIGHT*3 );
- }
- }
- }
- }
-*/
