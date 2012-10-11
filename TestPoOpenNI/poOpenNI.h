@@ -18,10 +18,10 @@
 #include <XnCppWrapper.h>
 #include <XnFPSCalculator.h>
 
-//// OpenCV
-//#include "opencv2/core/core.hpp"
-//#include "opencv2/imgproc/imgproc.hpp"
-//#include "opencv2/highgui/highgui.hpp"
+// OpenCV
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
 
 // Defines
 #define MAX_NUM_OF_SENSORS 6
@@ -44,6 +44,7 @@ printf("%s failed: %s\n", what, xnGetStatusString(rc));        \
 #define KINECT_HEIGHT   240
 
 using namespace xn;
+using namespace cv;
 using namespace std;
 
 struct xnDepthRgbSensors
@@ -67,6 +68,12 @@ public:
     void updateRGBImage(vector<poRectShape*>& rects);
     void updateDepthImage(vector<poRectShape*>& rects);
     
+    
+protected:
+    virtual void proccessImage();
+    virtual void proccessDepth();
+    
+    
 private:
     void initOpenNI();
     void run();
@@ -83,15 +90,14 @@ private:
     boost::thread openni_t;
     boost::thread opencv_t;
     
-    vector<poTexture*> textures;
+    vector<poTexture*> rgb_textures;
+    vector<poTexture*> depth_textures;
+    
     ubyte rgb[MAX_NUM_OF_SENSORS][KINECT_WIDTH*KINECT_HEIGHT*3];
+    ubyte depth[MAX_NUM_OF_SENSORS][KINECT_WIDTH*KINECT_HEIGHT*3];
     
     uint num_of_devices;
     uint max_devices;
-    
-protected:
-    virtual void proccessImage();
-    virtual void proccessDepth();
 };
 
 

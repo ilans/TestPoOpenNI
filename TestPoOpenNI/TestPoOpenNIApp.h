@@ -20,7 +20,8 @@ public:
     
     poOpenNI* openni;
 
-    vector<poRectShape*> rects;
+    vector<poRectShape*> rgb_rects;
+    vector<poRectShape*> depth_rects;
     
     bool flip_view;
 };

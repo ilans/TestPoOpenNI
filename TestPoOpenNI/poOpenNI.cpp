@@ -12,7 +12,8 @@ poOpenNI::poOpenNI(uint _max_devices, bool _flip_view):
 max_devices(_max_devices)
 {
     for(int i=0; i<max_devices; ++i){
-        textures.push_back(new poTexture(KINECT_WIDTH, KINECT_HEIGHT, NULL, GL_RGB));
+        rgb_textures.push_back(new poTexture(KINECT_WIDTH, KINECT_HEIGHT, NULL, GL_RGB));
+        depth_textures.push_back(new poTexture(KINECT_WIDTH, KINECT_HEIGHT, NULL, GL_RGB));
     }
     
     flip_view = _flip_view;
@@ -34,16 +35,16 @@ void poOpenNI::update(){
 void poOpenNI::updateRGBImage(vector<poRectShape*>& rects){
     for (int i=0; i<num_of_devices ; ++i) {
         if(rects.size()>i){
-            textures[i]->replace(rgb[i]);
-            rects[i]->placeTexture(textures[i]);
+            rgb_textures[i]->replace(rgb[i]);
+            rects[i]->placeTexture(rgb_textures[i]);
         }
     }
 }
 
 void poOpenNI::updateDepthImage(vector<poRectShape*>& rects){
     for (int i=0; i<num_of_devices ; ++i) {
-        textures[i]->replace(rgb[i]);
-        rects[i]->placeTexture(textures[i]);
+        depth_textures[i]->replace(depth[i]);
+        rects[i]->placeTexture(depth_textures[i]);
     }
 }
 
@@ -113,7 +114,12 @@ void poOpenNI::run(){
             if (sensor.depth.IsValid())
             {
                 sensor.depth.GetMetaData(sensor.depthMD);
-                
+                Mat depthMat  = Mat1s(KINECT_HEIGHT, KINECT_WIDTH);
+                Mat depthMat8 =  Mat1b(KINECT_HEIGHT, KINECT_WIDTH);
+                memcpy(depthMat.data, sensor.depth.GetDepthMap(), sizeof(short)*KINECT_WIDTH*KINECT_HEIGHT);
+                depthMat.convertTo(depthMat8, CV_8U, 255 / 2000.0); // render depth to debug frame
+                cvtColor(depthMat8, depthMat, CV_GRAY2BGR);
+                memcpy( depth[i], (ubyte*) depthMat.data , sizeof(ubyte)*KINECT_WIDTH*KINECT_HEIGHT*3 );
             }
             
             if (sensor.image.IsValid())
