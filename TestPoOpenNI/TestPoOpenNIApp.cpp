@@ -15,30 +15,19 @@ TestPoOpenNIApp::TestPoOpenNIApp() {
     
     for (int i=0; i<max_num_of_devices; ++i) {
         rgb_rects.push_back(new poRectShape(KINECT_WIDTH,KINECT_HEIGHT));
-        rgb_rects[i]->rotation = 180;
-        rgb_rects[i]->position.x = KINECT_WIDTH;
-        rgb_rects[i]->position.y = KINECT_HEIGHT;
+        rgb_rects[i]->rotation = i%2 ? 90 : -90 ;
+        rgb_rects[i]->position.x += KINECT_HEIGHT ;
+        rgb_rects[i]->position.y += i%2 ? 0 : KINECT_WIDTH ;
         addChild(rgb_rects[i]);
 
         depth_rects.push_back(new poRectShape(KINECT_WIDTH,KINECT_HEIGHT));
-        depth_rects[i]->rotation = 180;
-        depth_rects[i]->position.x = KINECT_WIDTH;
-        depth_rects[i]->position.y = KINECT_HEIGHT*2;
+        depth_rects[i]->rotation = i%2 ? 90 : -90 ;
+        depth_rects[i]->position.x += KINECT_HEIGHT ;
+        depth_rects[i]->position.y += i%2 ? KINECT_WIDTH : KINECT_WIDTH*2 ;
         addChild(depth_rects[i]);
     }
     
     flip_view = false;
-    if(rgb_rects.size() == 2){
-        if(flip_view){
-            rgb_rects[0]->position.x += rgb_rects[1]->getWidth();
-            depth_rects[0]->position.x += depth_rects[1]->getWidth();
-        }
-        else{
-            rgb_rects[1]->position.x += rgb_rects[0]->getWidth();
-            depth_rects[1]->position.x += depth_rects[0]->getWidth();
-        }
-    }
-    
     openni = new poOpenNI(max_num_of_devices, flip_view);
     
     addChild(openni);

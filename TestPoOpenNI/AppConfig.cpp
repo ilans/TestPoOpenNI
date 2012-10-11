@@ -13,7 +13,7 @@ poObject *createObjectForID(uint uid) {
 }
 
 void setupApplication() {
-	applicationCreateWindow(0, WINDOW_TYPE_NORMAL, "TestPoOpenNI", 100, 100, 640, 480);
+	applicationCreateWindow(0, WINDOW_TYPE_NORMAL, "TestPoOpenNI", 100, 100, 480, 640);
 }
 
 void cleanupApplication() {
