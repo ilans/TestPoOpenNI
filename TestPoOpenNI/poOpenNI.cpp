@@ -60,7 +60,7 @@ void poOpenNI::initOpenNI() {
     {
         devicesListCount++;
     }
-    CHECK_RC(nRetVal, "Enumerate");
+    //CHECK_RC(nRetVal, "Enumerate");
     
     int i=0;
     for (NodeInfoList::Iterator it = devicesList.Begin(); it != devicesList.End(); ++it, ++i)
@@ -69,7 +69,7 @@ void poOpenNI::initOpenNI() {
             // Create the device node
             NodeInfo deviceInfo = *it;
             nRetVal = xnContext.CreateProductionTree(deviceInfo, sensors[i].device);
-            CHECK_RC(nRetVal, "Create Device");
+            //CHECK_RC(nRetVal, "Create Device");
             
             // Create a query to depend on this node
             Query query;
@@ -81,11 +81,11 @@ void poOpenNI::initOpenNI() {
             
             // Now create a depth generator over this device
             nRetVal = xnContext.CreateAnyProductionTree(XN_NODE_TYPE_DEPTH, &query, sensors[i].depth);
-            CHECK_RC(nRetVal, "Create Depth");
+            //CHECK_RC(nRetVal, "Create Depth");
             
             // now create a image generator over this device
             nRetVal = xnContext.CreateAnyProductionTree(XN_NODE_TYPE_IMAGE, &query, sensors[i].image);
-            CHECK_RC(nRetVal, "Create Image");
+            //CHECK_RC(nRetVal, "Create Image");
             
             cout << "Device created\n";
             
@@ -97,7 +97,7 @@ void poOpenNI::initOpenNI() {
         xnContext.SetGlobalMirror(true);
     
     xnContext.StartGeneratingAll();
-	CHECK_RC(nRetVal, "StartGenerating");
+	//CHECK_RC(nRetVal, "StartGenerating");
 
 }
 

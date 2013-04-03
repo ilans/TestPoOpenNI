@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6E4A0B8C-2EEE-47E6-BA08-A776F04A065E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>pocodeApp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;GLEW_STATIC;BOOST_ALL_NO_LIB=1;BOOST_PYTHON_STATIC_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\pocode\libraries\pocode\include;C:\pocode\libraries\glew;C:\pocode\libraries\Boost\boost_1_49_0;C:\pocode\libraries\utf8;C:\pocode\libraries\pugixml;C:\pocode\libraries\openCV\include;C:\pocode\libraries;C:\perchLib\source;..\App;..\..\MSI_Common;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api\inc;C:\Program Files (x86)\OpenNI\Include;C:\Python27\include</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\pocode\libraries\pocode\win;C:\pocode\libraries\glew\win;C:\pocode\libraries\Boost\boost_1_49_0\win;C:\Python27\libs;C:\Program Files (x86)\FMOD SoundSystem\FMOD Programmers API Windows\api\lib;C:\pocode\libraries\openCV\libs\win;C:\Program Files (x86)\OpenNI\Lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32sd.lib;glu32.lib;opengl32.lib;pocode.lib;fmodex_vc.lib;opencv_core241d.lib;opencv_highgui241d.lib;opencv_video241d.lib;opencv_imgproc241d.lib;libjasper.lib;libjpeg.lib;openni.lib;libboost_python-vc100-mt-gd-1_49.lib;libboost_date_time-vc100-mt-gd-1_49.lib;libboost_filesystem-vc100-mt-gd-1_49.lib;libboost_system-vc100-mt-gd-1_49.lib;libboost_thread-vc100-mt-gd-1_49.lib;libboost_regex-vc100-mt-gd-1_49.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;BOOST_ALL_DYN_LINK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\pocode\source;C:\pocode_libs\glew\include;C:\pocode_libs\boost\include;C:\pocode_libs\pugixml\include;C:\pocode_libs\glm\include;C:\pocode_libs\opencv\include;C:\pocode_libs\fmod\include;C:\pocode_libs\openni\include</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>c:\pocode\win\Release;c:\pocode_libs\glew\lib;c:\pocode_libs\boost\lib;c:\pocode_libs\fmod\lib;c:\pocode_libs\opencv\lib;c:\pocode_libs\openni\lib;c:\pocode_libs\openal\lib;c:\pocode_libs\ffmpeg\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glu32.lib;opengl32.lib;fmodex_vc.lib;opencv_core243.lib;opencv_highgui243.lib;opencv_imgproc243.lib;opencv_video243.lib;openni.lib;openal32.lib;avutil.lib;avcodec.lib;avformat.lib;swscale.lib;swresample.lib;pocode.lib;winmm.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\TestPoOpenNI\poOpenNI.h" />
+    <ClInclude Include="..\TestPoOpenNI\TestPoOpenNIApp.h" />
+    <ClInclude Include="pixel_format_helper.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\TestPoOpenNI\AppConfig.cpp" />
+    <ClCompile Include="..\TestPoOpenNI\poOpenNI.cpp" />
+    <ClCompile Include="..\TestPoOpenNI\TestPoOpenNIApp.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="pixel_format_helper.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

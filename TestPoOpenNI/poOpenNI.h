@@ -23,6 +23,10 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/highgui/highgui.hpp"
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
 // Defines
 #define MAX_NUM_OF_SENSORS 6
 
