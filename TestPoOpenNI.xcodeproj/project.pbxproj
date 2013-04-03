@@ -16,6 +16,7 @@
 		EF8B201E161F89D6001BB13F /* TestPoOpenNIApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B201D161F89D6001BB13F /* TestPoOpenNIApp.cpp */; };
 		EF8B2020161F89D6001BB13F /* AppConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B201F161F89D6001BB13F /* AppConfig.cpp */; };
 		EF8B2022161F89D6001BB13F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF8B2021161F89D6001BB13F /* OpenSans-Regular.ttf */; };
+		EF8B202A161F8A43001BB13F /* poOpenNI.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8B2028161F8A43001BB13F /* poOpenNI.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		EF8B201D161F89D6001BB13F /* TestPoOpenNIApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestPoOpenNIApp.cpp; sourceTree = "<group>"; };
 		EF8B201F161F89D6001BB13F /* AppConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AppConfig.cpp; sourceTree = "<group>"; };
 		EF8B2021161F89D6001BB13F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../platform/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		EF8B2028161F8A43001BB13F /* poOpenNI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = poOpenNI.cpp; sourceTree = "<group>"; };
+		EF8B2029161F8A43001BB13F /* poOpenNI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poOpenNI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 			children = (
 				EF8B201C161F89D6001BB13F /* TestPoOpenNIApp.h */,
 				EF8B201D161F89D6001BB13F /* TestPoOpenNIApp.cpp */,
+				EF8B2029161F8A43001BB13F /* poOpenNI.h */,
+				EF8B2028161F8A43001BB13F /* poOpenNI.cpp */,
 				EF8B201F161F89D6001BB13F /* AppConfig.cpp */,
 			);
 			name = application;
@@ -171,6 +176,7 @@
 				EF8B201A161F89D6001BB13F /* poOpenGLView.mm in Sources */,
 				EF8B201E161F89D6001BB13F /* TestPoOpenNIApp.cpp in Sources */,
 				EF8B2020161F89D6001BB13F /* AppConfig.cpp in Sources */,
+				EF8B202A161F8A43001BB13F /* poOpenNI.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +228,7 @@
 				EF8B2027161F89D6001BB13F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
